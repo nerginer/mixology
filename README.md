@@ -13,3 +13,8 @@ Bu çalışma robotik bir coktail makinası ile ilgilidir.
 
 
 ##Database yapısı
+
+database mysql kullanilmistir.
+php ile kolay iletisim icin wrapper olarak
+http://www.ricocheting.com/code/php/mysql-database-class-wrapper
+kullanilmistir
