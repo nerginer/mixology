@@ -1,7 +1,19 @@
 <?php
 
-echo('
-	<center>
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(-1);
+
+require("class_cocktail.php");
+//$id = $_GET['cocktail_id'];
+
+//$mycocktail=new Cocktail($id);
+//echo $mycocktail->name;
+
+ function retrunInside($cocktailId) {
+ $mycocktail=new Cocktail($cocktailId);
+ 
+ echo ('<center>
         <div class="post">
             <table border="0">
                 <tr>
@@ -9,7 +21,7 @@ echo('
                         <center>
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title" id="baslik'.$id.'">Sex on the peach</h3>
+                                    <h3 class="panel-title">'. $mycocktail->name.'	</h3>
                                 </div>
                             </div>
                         </center>
@@ -23,7 +35,7 @@ echo('
                                 <h3 class="panel-title">image</h3>
                        </div>
                        <div class="panel-body">
-                                <img id="main_image'.$id.'" src="http://www.bols.com/wp-content/uploads/2013/08/Frenchkiss.jpg" width="400" height="470"></td>
+                                <img  src="'. $mycocktail->imageBig.'" width="400" height="470"></td>
                        </div>
 
                     <td style="width:400px">
@@ -33,7 +45,7 @@ echo('
                             </div>
 
                                <div class="panel-body">
-	                                <div class="list-group'.$id.'">
+	                                <div class="list-group">
 	                                    <a href="#" class="list-group-item">Kakula<span class="badge">40 ml</span></a>
 	                                    <a href="#" class="list-group-item">Votka<span class="badge">10 ml</span></a>
 	
@@ -69,7 +81,13 @@ echo('
             </table>
         </div>
     </center>
-    
-');    
+');
+ 
+ $mycocktail= null;
+ }
 
-?>    
+?>  
+
+	    
+   
+    
